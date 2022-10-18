@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300&display=swap');
+
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+h3 {
+  display: inline-block;
+  margin-left: 14px;
+}
+
+p {
+  margin-left: 14px;
+}
+.card {
+  width: 400px;
+  height: 200px;
+  margin: 10px;
+  background-color: lightseagreen;
+}
+
+.card-preview {
+  width: 300px;
+  height: 100px;
+  background-color: lightgray;
+}
