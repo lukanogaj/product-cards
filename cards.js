@@ -100,14 +100,12 @@ const cards = [
 
 // Selected component only html div
 const mainContainer = document.querySelector('.container');
-console.log(mainContainer);
 
 const previewStatus = (preview) => {
-  console.log(preview);
-  if (preview === true) {
-    console.log('correct');
-  } else if (preview === false) {
-    console.log('uncorrect');
+  if (!preview) {
+    return 'no-preview';
+  } else {
+    return 'card';
   }
 };
 
@@ -119,6 +117,7 @@ const createCards = () => {
     const cardType = document.createElement('p');
     // add the class
     cardChip.classList.add('card');
+    cardChip.classList.add(previewStatus(element.is_preview));
     // Inner text heading in every div
     cardType.innerText = element.product_type;
     cardName.innerText = element.name;
@@ -126,32 +125,9 @@ const createCards = () => {
     mainContainer.appendChild(cardChip);
     cardChip.appendChild(cardType);
     cardChip.appendChild(cardName);
-    // Function to check preview
-    console.log(element.is_preview);
-    // function
-
+    // function to check  for boolena value of the preview
     previewStatus(element.is_preview);
   });
 };
 
 createCards();
-
-// Function to change the colour of the card depence on preview status
-
-// for (let i = 0; i < cards.length; i++) {
-// const previewStatus = (element) => {
-//   if (cards.is_preview === true) {
-//     console.log('correct');
-//   } else if (cards.is_preview === false) {
-//     console.log('uncorrect');
-//   }
-// };
-// previewStatus(element.is_preview);
-
-// const previewStatus = () => {
-//   if (cards.is_preview === true) {
-//     console.log('correct');
-//   } else if (cards.is_preview === false) {
-//     console.log('uncorrect');
-//   }
-// };
