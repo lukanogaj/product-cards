@@ -105,7 +105,7 @@ const previewStatus = (preview) => {
   if (!preview) {
     return 'no-preview';
   } else {
-    return 'card';
+    return '';
   }
 };
 
@@ -122,11 +122,9 @@ const createCards = () => {
     cardType.innerText = element.product_type;
     cardName.innerText = element.name;
     // Add cards into and other elements into HTML
-    mainContainer.appendChild(cardChip);
     cardChip.appendChild(cardType);
     cardChip.appendChild(cardName);
-    // function to check  for boolena value of the preview
-    previewStatus(element.is_preview);
+    mainContainer.appendChild(cardChip);
   });
 };
 
