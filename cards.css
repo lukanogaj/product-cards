@@ -22,13 +22,22 @@ h3 {
 }
 
 p {
+  display: inline-block;
   margin-left: 14px;
 }
 .card {
+  display: flex;
+  justify-content: space-between;
   width: 400px;
   height: 200px;
   margin: 10px;
   background-color: lightseagreen;
+}
+
+.card-text {
+  width: 260px;
+  height: 100%;
+  background-color: rgb(173, 173, 77);
 }
 
 .no-preview {
@@ -36,4 +45,16 @@ p {
   height: 200px;
   margin: 10px;
   background-color: lightgray;
+}
+
+.preview {
+  width: 70px;
+  height: 40px;
+  background-color: red;
+}
+
+.preview-pill {
+  width: 140px;
+  height: 100px;
+  background-color: blue;
 }

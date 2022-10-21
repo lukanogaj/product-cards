@@ -97,6 +97,8 @@ const cards = [
     product_type: 'Historic Traffic Patterns',
   },
 ];
+// Array with the icons for objects
+const icons = [];
 
 // Selected component only html div
 const mainContainer = document.querySelector('.container');
@@ -105,27 +107,74 @@ const previewStatus = (preview) => {
   if (!preview) {
     return 'no-preview';
   } else {
-    return '';
+    return 'card';
   }
 };
 
 const createCards = () => {
   cards.forEach((element) => {
-    // create the card
+    // create the card and card elements
     const cardChip = document.createElement('div');
+    const cardText = document.createElement('div');
     const cardName = document.createElement('h3');
     const cardType = document.createElement('p');
+    const cardDate = document.createElement('p');
+    // create the preview pill
+    const previewPill = document.createElement('div');
+    const previewHEad = document.createElement('h4');
+    const imgDots = document.createElement('img');
+    const dateAcessStart = new Date(element.access_start_date);
+    const dateAcessExpiry = new Date(element.access_expiry_date);
+
     // add the class
     cardChip.classList.add('card');
+    cardText.classList.add('card-text');
+    previewPill.classList.add('preview-pill');
     cardChip.classList.add(previewStatus(element.is_preview));
     // Inner text heading in every div
     cardType.innerText = element.product_type;
     cardName.innerText = element.name;
+    previewHEad.innerText = 'Preview';
+    // Formating the acess and expiry dates
+    cardDate.innerText = `${dateAcessStart.toLocaleDateString(
+      'en-GB'
+    )} - ${dateAcessExpiry.toLocaleDateString('en-GB')}`;
+    imgDots.src = './images-cards/three-dots.svg';
     // Add cards into and other elements into HTML
-    cardChip.appendChild(cardType);
-    cardChip.appendChild(cardName);
+    cardText.appendChild(cardType);
+    cardText.appendChild(cardName);
+    cardText.append(cardDate);
+    cardChip.append(cardText);
+    cardChip.appendChild(previewPill);
+    previewPill.append(previewHEad);
+    previewPill.append(imgDots);
     mainContainer.appendChild(cardChip);
+    // render to dates for en-GB
+    console.log(dateAcessStart.toLocaleDateString('en-GB'));
+    console.log(dateAcessExpiry.toLocaleDateString('en-GB'));
   });
 };
 
 createCards();
+
+// const date = new Date(element.access_start_date);
+// console.log(date.toLocaleDateString('en-GB'));
+
+// const convertTime = (time) => {
+//   const date = new Date(time).toLocaleDateString('en-GB');
+//   const options =
+//    year: 'numeric',
+//       month: 'long',
+//       day: 'numeric',
+
+// };
+// console.log(convertTime(cards[0].access_expiry_date));
+// convertTime(cards[0].access_expiry_date);
+
+// const date = new Date(cards[0].access_start_date);
+// const options = {
+//   day: 'numeric',
+//   year: 'numeric',
+//   month: 'numeric',
+// };
+// console.log(date.toLocaleDateString('en-GB', options));
