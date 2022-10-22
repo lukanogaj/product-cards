@@ -115,6 +115,7 @@ const createCards = () => {
   cards.forEach((element) => {
     // create the card and card elements
     const cardChip = document.createElement('div');
+    const iconChip = document.createElement('div');
     const cardText = document.createElement('div');
     const cardName = document.createElement('h3');
     const cardType = document.createElement('p');
@@ -128,13 +129,16 @@ const createCards = () => {
 
     // add the class
     cardChip.classList.add('card');
+    iconChip.classList.add('icon');
     cardText.classList.add('card-text');
     previewPill.classList.add('preview-pill');
     cardChip.classList.add(previewStatus(element.is_preview));
+
     // Inner text heading in every div
     cardType.innerText = element.product_type;
     cardName.innerText = element.name;
     previewHEad.innerText = 'Preview';
+    iconChip.innerText = 'Hello';
     // Formating the acess and expiry dates
     cardDate.innerText = `${dateAcessStart.toLocaleDateString(
       'en-GB'
@@ -144,14 +148,13 @@ const createCards = () => {
     cardText.appendChild(cardType);
     cardText.appendChild(cardName);
     cardText.append(cardDate);
+    cardChip.append(iconChip);
     cardChip.append(cardText);
     cardChip.appendChild(previewPill);
     previewPill.append(previewHEad);
     previewPill.append(imgDots);
     mainContainer.appendChild(cardChip);
     // render to dates for en-GB
-    console.log(dateAcessStart.toLocaleDateString('en-GB'));
-    console.log(dateAcessExpiry.toLocaleDateString('en-GB'));
   });
 };
 
