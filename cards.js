@@ -98,11 +98,34 @@ const cards = [
   },
 ];
 // Array with the icons for objects
-const icons = [];
+const icons = {
+  iconOne: {
+    type: 'Intersection Performance',
+    class: 'intersection',
+  },
+  iconTwo: {
+    type: 'Origin Destination',
+    class: 'origin',
+  },
+  iconThree: {
+    type: 'Waypoints',
+    class: 'waypoints',
+  },
+  iconFour: {
+    type: 'Points of Interest',
+    class: 'interest',
+  },
 
+  iconFive: {
+    type: 'Historic Traffic Patterns',
+    class: 'pattern',
+  },
+};
 // Selected component only html div
 const mainContainer = document.querySelector('.container');
 
+// Function for the project
+// Preview status fucntion
 const previewStatus = (preview) => {
   if (!preview) {
     return 'no-preview';
@@ -110,8 +133,25 @@ const previewStatus = (preview) => {
     return 'card';
   }
 };
+/////////////////////////////////
+// Product type function
+const whichIcon = (type) => {
+  if (icons.iconOne.type === type) {
+    return icons.iconOne.class;
+  } else if (icons.iconTwo.type === type) {
+    return icons.iconTwo.class;
+  } else if (icons.iconThree.type === type) {
+    return icons.iconThree.class;
+  } else if (icons.iconFour.type === type) {
+    return icons.iconFour.class;
+  }
+};
 
-const createCards = () => {
+console.log(whichIcon('Intersection Performance'));
+
+///////////////////////////////////////////////////
+
+function createCards() {
   cards.forEach((element) => {
     // create the card and card elements
     const cardChip = document.createElement('div');
@@ -133,12 +173,13 @@ const createCards = () => {
     cardText.classList.add('card-text');
     previewPill.classList.add('preview-pill');
     cardChip.classList.add(previewStatus(element.is_preview));
+    iconChip.classList.add(whichIcon(element.product_type));
 
     // Inner text heading in every div
     cardType.innerText = element.product_type;
     cardName.innerText = element.name;
     previewHEad.innerText = 'Preview';
-    iconChip.innerText = 'Hello';
+
     // Formating the acess and expiry dates
     cardDate.innerText = `${dateAcessStart.toLocaleDateString(
       'en-GB'
@@ -156,7 +197,7 @@ const createCards = () => {
     mainContainer.appendChild(cardChip);
     // render to dates for en-GB
   });
-};
+}
 
 createCards();
 
