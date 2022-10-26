@@ -98,29 +98,29 @@ const cards = [
   },
 ];
 // Array with the icons for objects
-const icons = {
-  iconOne: {
+const icons = [
+  {
     type: 'Intersection Performance',
     class: 'intersection',
   },
-  iconTwo: {
+  {
     type: 'Origin Destination',
     class: 'origin',
   },
-  iconThree: {
+  {
     type: 'Waypoints',
     class: 'waypoints',
   },
-  iconFour: {
+  {
     type: 'Points of Interest',
-    class: 'interest',
+    class: 'points',
   },
 
-  iconFive: {
+  {
     type: 'Historic Traffic Patterns',
     class: 'pattern',
   },
-};
+];
 // Selected component only html div
 const mainContainer = document.querySelector('.container');
 
@@ -135,22 +135,23 @@ const previewStatus = (preview) => {
 };
 /////////////////////////////////
 // Product type function
-const whichIcon = (type) => {
-  if (icons.iconOne.type === type) {
-    return icons.iconOne.class;
-  } else if (icons.iconTwo.type === type) {
-    return icons.iconTwo.class;
-  } else if (icons.iconThree.type === type) {
-    return icons.iconThree.class;
-  } else if (icons.iconFour.type === type) {
-    return icons.iconFour.class;
-  }
+// const whichIcon = (productType) => {
+//   let className = []; //
+//   for (let i = 0; i < icons.length; ++i) {
+//     if (icons[i] === productType) {
+//       className.icons[i].class;
+//     }
+//   }
+// };
+
+// Product type function with using method find, (return value )
+const whichIcon = (productType) => {
+  const className = icons.find((product) => product.type === productType);
+  console.log(className.class);
+  return className.class;
 };
 
-console.log(whichIcon('Intersection Performance'));
-
-///////////////////////////////////////////////////
-
+///////////////////////////
 function createCards() {
   cards.forEach((element) => {
     // create the card and card elements
@@ -174,12 +175,10 @@ function createCards() {
     previewPill.classList.add('preview-pill');
     cardChip.classList.add(previewStatus(element.is_preview));
     iconChip.classList.add(whichIcon(element.product_type));
-
     // Inner text heading in every div
     cardType.innerText = element.product_type;
     cardName.innerText = element.name;
     previewHEad.innerText = 'Preview';
-
     // Formating the acess and expiry dates
     cardDate.innerText = `${dateAcessStart.toLocaleDateString(
       'en-GB'
@@ -200,25 +199,3 @@ function createCards() {
 }
 
 createCards();
-
-// const date = new Date(element.access_start_date);
-// console.log(date.toLocaleDateString('en-GB'));
-
-// const convertTime = (time) => {
-//   const date = new Date(time).toLocaleDateString('en-GB');
-//   const options =
-//    year: 'numeric',
-//       month: 'long',
-//       day: 'numeric',
-
-// };
-// console.log(convertTime(cards[0].access_expiry_date));
-// convertTime(cards[0].access_expiry_date);
-
-// const date = new Date(cards[0].access_start_date);
-// const options = {
-//   day: 'numeric',
-//   year: 'numeric',
-//   month: 'numeric',
-// };
-// console.log(date.toLocaleDateString('en-GB', options));

@@ -20,6 +20,8 @@ body {
   background-color: gold;
   width: 50px;
   height: 50px;
+  border-radius: 12px;
+  margin: 1px;
 }
 
 h3 {
@@ -61,34 +63,45 @@ p {
 .preview {
   width: 70px;
   height: 40px;
-  /* background-color: red; */
 }
 
 .preview-pill {
+  text-align: center;
   width: 140px;
   height: 100px;
-  /* background-color: blue; */
+}
+
+.preview-pill h4 {
+  width: 100px;
+  height: 20px;
+  color: #1e90ff;
+  background-color: #b0e0e6;
+  border-radius: 5px;
+}
+
+.preview-pill img {
+  margin-left: 70px;
 }
 
 /*  Classes for the square  */
 .intersection {
-  background-color: gold;
-  /* width: 50px;
-  height: 50px; */
-  background: url(./images-cards/intersection.svg);
+  background: #f9b703 url(./images-cards/intersection.svg) no-repeat 8px 50%;
 }
 .origin {
-  background: url(./images-cards/origin-destinations.svg);
+  background: #f9b703 url(./images-cards/origin-destinations.svg) no-repeat 1px
+    50%;
 }
 
 .waypoints {
-  background: url(./images-cards/waypoints.svg);
+  background: #f9b703 url(./images-cards/waypoints.svg) no-repeat 2px 50%;
 }
 
 .points {
-  background: url(./images-cards/points-of-interest.svg);
+  width: 50px;
+  height: 50px;
+  background: #f9b703 url(./images-cards/points.svg) no-repeat 3px 50%;
 }
 
-.historic {
-  background: url(./images-cards/historic-traffic.svg);
+.pattern {
+  background: #f9b703 url(./images-cards/crossroads.svg) no-repeat 1px 50%;
 }
