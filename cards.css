@@ -95,13 +95,15 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100px;
+  width: 80px;
   height: 30px;
+  font-size: 14px;
   font-weight: 300;
   letter-spacing: 0.1rem;
   color: #1e90ff;
   background-color: #b0e0e6;
-  border-radius: 8px;
+  border-radius: 18px;
+  margin-left: 27px;
 }
 .preview-none {
   visibility: hidden;
@@ -117,7 +119,7 @@ p {
   margin-left: 70px;
 }
 
-/*  Classes for the icons */
+/*  Classes for the  */
 .intersection {
   background: #f9b703 url(./images-cards/intersection.svg) no-repeat 8px 50%;
 }
