@@ -156,7 +156,7 @@ function createCards() {
     const cardChip = document.createElement('div');
     const iconChip = document.createElement('div');
     const cardText = document.createElement('div');
-    const cardName = document.createElement('h3');
+    const cardName = document.createElement('h4');
     const cardType = document.createElement('p');
     const cardDate = document.createElement('p');
     // create the preview pill
@@ -170,6 +170,8 @@ function createCards() {
     cardChip.classList.add('card');
     iconChip.classList.add('icon');
     cardText.classList.add('card-text');
+    cardType.classList.add('card-paragraph-name');
+    cardDate.classList.add('card-paragraph-date');
     previewPill.classList.add('preview-pill');
     previewHEad.classList.add('preview-head');
     cardChip.classList.add(previewStatus(element.is_preview));
