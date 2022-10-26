@@ -134,21 +134,19 @@ const previewStatus = (preview) => {
   }
 };
 /////////////////////////////////
-// Product type function
-// const whichIcon = (productType) => {
-//   let className = []; //
-//   for (let i = 0; i < icons.length; ++i) {
-//     if (icons[i] === productType) {
-//       className.icons[i].class;
-//     }
-//   }
-// };
-
 // Product type function with using method find, (return value )
 const whichIcon = (productType) => {
   const className = icons.find((product) => product.type === productType);
-  console.log(className.class);
   return className.class;
+};
+///////////////////////////
+//Funstion for head preview
+const showPreview = (show) => {
+  if (show) {
+    return 'preview-head';
+  } else {
+    return 'preview-none';
+  }
 };
 
 ///////////////////////////
@@ -173,12 +171,18 @@ function createCards() {
     iconChip.classList.add('icon');
     cardText.classList.add('card-text');
     previewPill.classList.add('preview-pill');
+    previewHEad.classList.add('preview-head');
     cardChip.classList.add(previewStatus(element.is_preview));
     iconChip.classList.add(whichIcon(element.product_type));
+    previewHEad.classList.add(showPreview(element.is_preview));
+
+    //////////////////////////////////////////////////
     // Inner text heading in every div
     cardType.innerText = element.product_type;
     cardName.innerText = element.name;
-    previewHEad.innerText = 'Preview';
+    previewHEad.innerText = element.is_preview ? 'Preview' : '';
+
+    // previewHEad.innerText = 'Preview';
     // Formating the acess and expiry dates
     cardDate.innerText = `${dateAcessStart.toLocaleDateString(
       'en-GB'

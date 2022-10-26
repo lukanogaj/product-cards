@@ -49,7 +49,6 @@ p {
   flex-direction: column;
   width: 260px;
   height: 100%;
-  /* background-color: rgb(173, 173, 77); */
 }
 
 .no-preview {
@@ -58,6 +57,7 @@ p {
   height: 200px;
   margin: 10px;
   background-color: lightgray;
+  border-radius: 12px;
 }
 
 .preview {
@@ -71,7 +71,15 @@ p {
   height: 100px;
 }
 
-.preview-pill h4 {
+.preview-head {
+  width: 100px;
+  height: 20px;
+  color: #1e90ff;
+  background-color: #b0e0e6;
+  border-radius: 5px;
+}
+.preview-none {
+  visibility: hidden;
   width: 100px;
   height: 20px;
   color: #1e90ff;
@@ -80,6 +88,7 @@ p {
 }
 
 .preview-pill img {
+  display: inline-block;
   margin-left: 70px;
 }
 
