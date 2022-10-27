@@ -17,22 +17,13 @@ body {
 }
 
 .icon {
-  background-color: gold;
   width: 50px;
   height: 50px;
   border-radius: 12px;
   margin: 13px 0px 0px 13px;
 }
 
-h3 {
-  display: inline-block;
-  margin-left: 14px;
-}
-
-p {
-  display: inline-block;
-  margin-left: 14px;
-}
+/* The card with the date and peragraphs */
 .card {
   display: flex;
   justify-content: space-between;
@@ -54,10 +45,22 @@ p {
 }
 
 .card-paragraph-name {
+  display: inline-block;
   font-size: 18px;
   font-weight: 600;
   text-align: left;
   margin-bottom: 4px;
+  margin-left: 14px;
+}
+
+.card-paragraph-date {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 100;
+  letter-spacing: 0.02rem;
+  text-align: left;
+  padding-top: 4px;
+  margin-left: 14px;
 }
 .card-text h4 {
   font-size: 18px;
@@ -65,14 +68,6 @@ p {
   font-weight: 100;
   letter-spacing: 0.1rem;
   margin-bottom: 6px;
-}
-
-.card-paragraph-date {
-  font-size: 14px;
-  font-weight: 100;
-  letter-spacing: 0.02rem;
-  text-align: left;
-  margin-bottom: 3px;
 }
 
 /* The preview pill div */

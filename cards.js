@@ -126,14 +126,19 @@ const mainContainer = document.querySelector('.container');
 
 // Function for the project
 // Preview status fucntion
-const previewStatus = (preview) => {
-  if (!preview) {
-    return 'no-preview';
-  } else {
-    return 'card';
-  }
-};
-/////////////////////////////////
+// const previewStatus = (preview) => {
+//   if (preview) {
+//     return 'card';
+//   } else {
+//     return 'no-preview';
+//   }
+// };
+///////////////////////
+// Ternary operator for the previeStatus and showPreview
+const previewStatus = (preview) => (preview ? 'card' : 'no-preview'); //
+const showPreview = (show) => (show ? 'preview-head' : 'preview-none');
+
+/////;////////////////////////////
 // Product type function with using method find, (return value )
 const whichIcon = (productType) => {
   const className = icons.find((product) => product.type === productType);
@@ -141,13 +146,16 @@ const whichIcon = (productType) => {
 };
 ///////////////////////////
 //Funstion for head preview
-const showPreview = (show) => {
-  if (show) {
-    return 'preview-head';
-  } else {
-    return 'preview-none';
-  }
-};
+// const showPreview = (show) => {
+//   if (show) {
+//     return 'preview-head';
+//   } else {
+//     return 'preview-none';
+//   }
+// };
+////////////////////////////////////////////
+// Ternary operator for above function
+// const showPreview = (show) => (show ? 'preview-head' : 'preview-none');
 
 ///////////////////////////
 function createCards() {
