@@ -170,7 +170,8 @@ function createCards() {
     // create the preview pill
     const previewPill = document.createElement('div');
     const previewHEad = document.createElement('h4');
-    const imgDots = document.createElement('img');
+    const btnDots = document.createElement('button');
+    console.log(btnDots);
     const dateAcessStart = new Date(element.access_start_date);
     const dateAcessExpiry = new Date(element.access_expiry_date);
 
@@ -182,6 +183,7 @@ function createCards() {
     cardDate.classList.add('card-paragraph-date');
     previewPill.classList.add('preview-pill');
     previewHEad.classList.add('preview-head');
+    btnDots.classList.add('btn-dots');
     cardChip.classList.add(previewStatus(element.is_preview));
     iconChip.classList.add(whichIcon(element.product_type));
     previewHEad.classList.add(showPreview(element.is_preview));
@@ -197,7 +199,6 @@ function createCards() {
     cardDate.innerText = `${dateAcessStart.toLocaleDateString(
       'en-GB'
     )} - ${dateAcessExpiry.toLocaleDateString('en-GB')}`;
-    imgDots.src = './images-cards/three-dots.svg';
     // Add cards into and other elements into HTML
     cardText.appendChild(cardType);
     cardText.appendChild(cardName);
@@ -206,14 +207,10 @@ function createCards() {
     cardChip.append(cardText);
     cardChip.appendChild(previewPill);
     previewPill.append(previewHEad);
-    previewPill.append(imgDots);
+    previewPill.append(btnDots);
     mainContainer.appendChild(cardChip);
     // render to dates for en-GB
   });
 }
 
 createCards();
-
-// const multiCLassFucntion = (htmlelement, classes){
-
-// }

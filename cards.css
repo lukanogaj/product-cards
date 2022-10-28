@@ -12,15 +12,19 @@ body {
 }
 .container {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   flex-wrap: wrap;
+  box-shadow: none;
+  width: 100%;
+  height: 50%;
+  padding: 10px;
 }
 
 .icon {
-  width: 50px;
-  height: 50px;
-  border-radius: 12px;
-  margin: 13px 0px 0px 13px;
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  margin: 10px;
 }
 
 /* The card with the date and peragraphs */
@@ -29,8 +33,8 @@ body {
   justify-content: space-between;
   width: 400px;
   height: 150px;
-  margin: 10px;
-  border: 2px dotted #000000;
+  padding: 10px;
+  border: 1px dashed #000000;
   border-radius: 12px;
   transition-duration: 1s;
 }
@@ -43,8 +47,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 260px;
-  height: 200px;
+  width: 220px;
   line-height: 0px;
   margin-top: 10px;
 }
@@ -79,7 +82,7 @@ body {
 .no-preview {
   width: 400px;
   height: 150px;
-  margin: 10px;
+  padding: 10px;
   background-color: lightgray;
   border-radius: 12px;
   border: none;
@@ -87,7 +90,7 @@ body {
 
 .preview-pill {
   text-align: center;
-  width: 140px;
+  width: 120px;
   height: 100px;
 }
 
@@ -111,8 +114,12 @@ body {
   height: 30px;
 }
 
-.preview-pill img {
+.btn-dots {
   margin-left: 70px;
+  background: url(./images-cards/three-dots.svg) no-repeat 5px 50%;
+  background-size: 20px;
+  width: 10px;
+  height: 20px;
 }
 
 /*  Classes for the  */
@@ -120,21 +127,21 @@ body {
   background: #f9b703 url(./images-cards/intersection.svg) no-repeat 8px 50%;
 }
 .origin {
-  background: #f9b703 url(./images-cards/direction-origin.svg) no-repeat 8px 50%;
+  background: #f9b703 url(./images-cards/direction-origin.svg) no-repeat 5px 50%;
 }
 
 .waypoints {
   background: #f9b703 url(./images-cards/globe-locations-svgrepo-com.svg)
-    no-repeat 8px 50%;
+    no-repeat 5px 50%;
   background-size: 32px;
 }
 
 .points {
-  background: #f9b703 url(./images-cards/points.svg) no-repeat 8px 50%;
+  background: #f9b703 url(./images-cards/points.svg) no-repeat 5px 50%;
   background-size: 32px;
 }
 
 .pattern {
   background: #f9b703 url(./images-cards/crossroads.svg) no-repeat 8px 50%;
-  background-size: 32px;
+  background-size: 28px;
 }
