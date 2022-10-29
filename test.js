@@ -171,7 +171,6 @@ function createCards() {
     const previewPill = document.createElement('div');
     const previewHEad = document.createElement('h4');
     const btnDots = document.createElement('button');
-    console.log(btnDots);
     const dateAcessStart = new Date(element.access_start_date);
     const dateAcessExpiry = new Date(element.access_expiry_date);
 
@@ -214,3 +213,44 @@ function createCards() {
 }
 
 createCards();
+
+// Function to create the classes and html elements
+const classes = [];
+
+const createHtml = (element, className) => {
+  const htmlEl = document.createElement(element);
+  if (className === previewStatus() && className === showPreview()) {
+    console.log(htmlEl);
+    htmlEl.classList.add(...classes);
+  }
+};
+createHtml('div', ...classes);
+
+// console.log(createHtml('div', ('class-div', 'class-2')));
+
+/*
+//1. create a function with two parameters
+    - html element
+    - class or multiple classes
+2. create an element inside function
+3. add class or multiple classes
+    - use condition to determine if you're 
+      adding one or multiple classes
+4. return created element
+---------------------------------------------------
+use function to create elements and append created 
+elements to parent elements
+
+you can also extend the function and create deeply
+nested elements inside of a function
+example of what you could create and return from function
+
+<div class="any">
+    <p class="any-class">
+        any text
+    <p>
+    <p class="any-class">
+        any new text
+    <p>
+        </div>
+*/

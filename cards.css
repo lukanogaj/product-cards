@@ -116,10 +116,11 @@ body {
 
 .btn-dots {
   margin-left: 70px;
-  background: url(./images-cards/three-dots.svg) no-repeat 5px 50%;
-  background-size: 20px;
+  background: url(./images-cards/3-vertical-dots-icon.svg) no-repeat 5px 50%;
+  background-size: 4px;
   width: 10px;
   height: 20px;
+  border: none;
 }
 
 /*  Classes for the  */
