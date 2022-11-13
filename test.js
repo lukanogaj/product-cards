@@ -124,16 +124,7 @@ const icons = [
 // Selected component only html div
 const mainContainer = document.querySelector('.container');
 
-// Function for the project
-// Preview status fucntion
-// const previewStatus = (preview) => {
-//   if (preview) {
-//     return 'card';
-//   } else {
-//     return 'no-preview';
-//   }
-// };
-///////////////////////
+////////////////////////////
 // Ternary operator for the previeStatus and showPreview
 const previewStatus = (preview) => (preview ? 'card' : 'no-preview'); //
 const showPreview = (show) => (show ? 'preview-head' : 'preview-none');
@@ -145,21 +136,11 @@ const whichIcon = (productType) => {
   return className.class;
 };
 
-///////////////////////////
-//Function for head preview
-// const showPreview = (show) => {
-//   if (show) {
-//     return 'preview-head';
-//   } else {
-//     return 'preview-none';
-//   }
-// };
 ////////////////////////////////////////////
 // Function for elements
 // 1. create a function with two parameters
 //  - html element
 // - class or multiple classes
-
 const createNewElement = (element, classes) => {
   // 2. create an element inside function
   const newElement = document.createElement(element);
@@ -174,11 +155,12 @@ const createNewElement = (element, classes) => {
   console.log(newElement);
   return newElement;
 };
+//// The function createNewElement() to replace the DRY in funtion createCards
 
 ///////////////////////////
 function createCards() {
   cards.forEach((element) => {
-    // create the card and card elements
+    // create the card and card elements with multi classes
     const cardChip = document.createElement('div');
     const iconChip = document.createElement('div');
     const cardText = document.createElement('div');
@@ -201,6 +183,7 @@ function createCards() {
     previewPill.classList.add('preview-pill');
     previewHEad.classList.add('preview-head');
     btnDots.classList.add('btn-dots');
+    // second class no preview
     cardChip.classList.add(previewStatus(element.is_preview));
     iconChip.classList.add(whichIcon(element.product_type));
     previewHEad.classList.add(showPreview(element.is_preview));
@@ -211,7 +194,6 @@ function createCards() {
     cardName.innerText = element.name;
     previewHEad.innerText = element.is_preview ? 'Preview' : '';
 
-    // previewHEad.innerText = 'Preview';
     // Formating the acess and expiry dates
     cardDate.innerText = `${dateAcessStart.toLocaleDateString(
       'en-GB'
@@ -230,5 +212,7 @@ function createCards() {
   });
 }
 
+//////////////////////////////////////
+// Invoking all the functions
 createCards();
 createNewElement('div', ['class-1', 'class-2']);
