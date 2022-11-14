@@ -152,21 +152,51 @@ const createNewElement = (element, classes) => {
   } else {
     newElement.classList.add(classes);
   }
-  console.log(newElement);
+  // console.log(newElement);
   return newElement;
 };
-//// The function createNewElement() to replace the DRY in funtion createCards
 
+// const paragraphs = createNewElement('p', ['paragraph1', 'paragraph2']);
+for (let i = 0; i < 2; i++) {
+  const paragraphs = createNewElement('p', ['paragraph1', 'paragraph2']);
+  console.log(paragraphs);
+}
+
+//// The function createNewElement() to replace the DRY in funtion createCards
+// Card multiclasses add
 ///////////////////////////
 function createCards() {
   cards.forEach((element) => {
     // create the card and card elements with multi classes
-    const cardChip = document.createElement('div');
-    const iconChip = document.createElement('div');
-    const cardText = document.createElement('div');
-    const cardName = document.createElement('h4');
-    const cardType = document.createElement('p');
-    const cardDate = document.createElement('p');
+    // Use function for the card two classes
+    const cardChip = createNewElement('div', [
+      'card',
+      previewStatus(element.is_preview),
+    ]);
+    // Use function for the icon
+    const iconChip = createNewElement('div', [
+      'icon',
+      whichIcon(element.product_type),
+    ]);
+    // Use function for card paragraph and heading
+    const cardText = createNewElement('div', 'card-text');
+    // Use the function to create the first paragraph with div purpose
+    const cardType = createNewElement('p', 'paragraph-purpose');
+    // Use the function to create heading city name
+    const cardName = createNewElement('h4');
+    cardName.innerText = element.name;
+    // Use the function to create second paragraph with the date
+    const cardDate = createNewElement('p', 'paragraph-date');
+    // Use the function to control preview pill div with multi 2 classes
+
+    // const paragraphs = createNewElement('p', ['paragraph1', 'paragraph2']);
+    //////////////////////////////////////////////////////
+    // const cardChip = document.createElement('div');
+    // const iconChip = document.createElement('div');
+    // const cardText = document.createElement('div');
+    // const cardName = document.createElement('h4');
+    // const cardType = document.createElement('p');
+    // const cardDate = document.createElement('p');
     // create the preview pill
     const previewPill = document.createElement('div');
     const previewHEad = document.createElement('h4');
@@ -175,23 +205,23 @@ function createCards() {
     const dateAcessExpiry = new Date(element.access_expiry_date);
 
     // add the class
-    cardChip.classList.add('card');
-    iconChip.classList.add('icon');
-    cardText.classList.add('card-text');
-    cardType.classList.add('card-paragraph-name');
-    cardDate.classList.add('card-paragraph-date');
+    // cardChip.classList.add('card');
+    // iconChip.classList.add('icon');
+    // cardText.classList.add('card-text');
+    // cardType.classList.add('card-paragraph-name');
+    // cardDate.classList.add('card-paragraph-date');
     previewPill.classList.add('preview-pill');
     previewHEad.classList.add('preview-head');
     btnDots.classList.add('btn-dots');
     // second class no preview
-    cardChip.classList.add(previewStatus(element.is_preview));
-    iconChip.classList.add(whichIcon(element.product_type));
+    // cardChip.classList.add(previewStatus(element.is_preview));
+    // iconChip.classList.add(whichIcon(element.product_type));
     previewHEad.classList.add(showPreview(element.is_preview));
 
     //////////////////////////////////////////////////
     // Inner text heading in every div
+    // cardName.innerText = element.name;
     cardType.innerText = element.product_type;
-    cardName.innerText = element.name;
     previewHEad.innerText = element.is_preview ? 'Preview' : '';
 
     // Formating the acess and expiry dates
@@ -215,4 +245,4 @@ function createCards() {
 //////////////////////////////////////
 // Invoking all the functions
 createCards();
-createNewElement('div', ['class-1', 'class-2']);
+// createNewElement('div', ['class-1', 'class-2']);

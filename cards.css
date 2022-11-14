@@ -52,7 +52,7 @@ body {
   margin-top: 10px;
 }
 
-.card-paragraph-name {
+.paragraph-purpose {
   display: inline-block;
   font-size: 18px;
   font-weight: 600;
@@ -61,7 +61,7 @@ body {
   margin-left: 14px;
 }
 
-.card-paragraph-date {
+.paragraph-date {
   display: inline-block;
   font-size: 14px;
   font-weight: 100;
