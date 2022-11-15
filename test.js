@@ -156,12 +156,6 @@ const createNewElement = (element, classes) => {
   return newElement;
 };
 
-// const paragraphs = createNewElement('p', ['paragraph1', 'paragraph2']);
-for (let i = 0; i < 2; i++) {
-  const paragraphs = createNewElement('p', ['paragraph1', 'paragraph2']);
-  console.log(paragraphs);
-}
-
 //// The function createNewElement() to replace the DRY in funtion createCards
 // Card multiclasses add
 ///////////////////////////
@@ -181,48 +175,30 @@ function createCards() {
     // Use function for card paragraph and heading
     const cardText = createNewElement('div', 'card-text');
     // Use the function to create the first paragraph with div purpose
-    const cardType = createNewElement('p', 'paragraph-purpose');
+    const cardType = createNewElement('p', 'product-type');
     // Use the function to create heading city name
     const cardName = createNewElement('h4');
     cardName.innerText = element.name;
     // Use the function to create second paragraph with the date
-    const cardDate = createNewElement('p', 'paragraph-date');
-    // Use the function to control preview pill div with multi 2 classes
-
-    // const paragraphs = createNewElement('p', ['paragraph1', 'paragraph2']);
+    const cardDate = createNewElement('p', 'product-date');
+    // Use the function to control preview pill div
+    const previewPill = createNewElement('div', 'preview-pill');
+    // Use the function to create the preview head pill with 2 classes
+    const previewHead = createNewElement('h4', [
+      'preview-head',
+      showPreview(element.is_preview),
+    ]);
+    // Use the function to create the button
+    const btnDots = createNewElement('button', 'btn-dots');
     //////////////////////////////////////////////////////
-    // const cardChip = document.createElement('div');
-    // const iconChip = document.createElement('div');
-    // const cardText = document.createElement('div');
-    // const cardName = document.createElement('h4');
-    // const cardType = document.createElement('p');
-    // const cardDate = document.createElement('p');
-    // create the preview pill
-    const previewPill = document.createElement('div');
-    const previewHEad = document.createElement('h4');
-    const btnDots = document.createElement('button');
+
+    // const btnDots = document.createElement('button');
     const dateAcessStart = new Date(element.access_start_date);
     const dateAcessExpiry = new Date(element.access_expiry_date);
-
-    // add the class
-    // cardChip.classList.add('card');
-    // iconChip.classList.add('icon');
-    // cardText.classList.add('card-text');
-    // cardType.classList.add('card-paragraph-name');
-    // cardDate.classList.add('card-paragraph-date');
-    previewPill.classList.add('preview-pill');
-    previewHEad.classList.add('preview-head');
-    btnDots.classList.add('btn-dots');
-    // second class no preview
-    // cardChip.classList.add(previewStatus(element.is_preview));
-    // iconChip.classList.add(whichIcon(element.product_type));
-    previewHEad.classList.add(showPreview(element.is_preview));
-
-    //////////////////////////////////////////////////
+    ///////////////////////////////////////////
     // Inner text heading in every div
-    // cardName.innerText = element.name;
     cardType.innerText = element.product_type;
-    previewHEad.innerText = element.is_preview ? 'Preview' : '';
+    previewHead.innerText = element.is_preview ? 'Preview' : '';
 
     // Formating the acess and expiry dates
     cardDate.innerText = `${dateAcessStart.toLocaleDateString(
@@ -235,7 +211,7 @@ function createCards() {
     cardChip.append(iconChip);
     cardChip.append(cardText);
     cardChip.appendChild(previewPill);
-    previewPill.append(previewHEad);
+    previewPill.append(previewHead);
     previewPill.append(btnDots);
     mainContainer.appendChild(cardChip);
     // render to dates for en-GB
@@ -245,4 +221,3 @@ function createCards() {
 //////////////////////////////////////
 // Invoking all the functions
 createCards();
-// createNewElement('div', ['class-1', 'class-2']);

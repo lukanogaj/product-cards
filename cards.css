@@ -52,7 +52,7 @@ body {
   margin-top: 10px;
 }
 
-.paragraph-purpose {
+.product-type {
   display: inline-block;
   font-size: 18px;
   font-weight: 600;
@@ -61,7 +61,7 @@ body {
   margin-left: 14px;
 }
 
-.paragraph-date {
+.product-date {
   display: inline-block;
   font-size: 14px;
   font-weight: 100;
